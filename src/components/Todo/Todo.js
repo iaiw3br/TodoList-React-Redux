@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Todo.css';
 
 const Todo = ({
-  onClick, completed, text, onToggleImportant, important, onToggleDelete
+  onClick, completed, text, onToggleImportant, important, onToggleDelete,
 }) => {
   let classNames = 'todo-list-item';
 
@@ -46,6 +46,8 @@ const Todo = ({
 
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
+  onToggleImportant: PropTypes.func.isRequired,
+  onToggleDelete: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   important: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
