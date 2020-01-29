@@ -6,18 +6,21 @@ import './Todo.css';
 const Todo = ({
   onClick, completed, text, onToggleImportant, important, onToggleDelete,
 }) => {
-  let classNames = 'todo-list-item';
+  const getClassNames = () => {
+    let classNames = 'todo-list-item';
 
-  if (important) {
-    classNames += ' important';
-  }
+    if (important) {
+      classNames += ' important';
+    }
 
-  if (completed) {
-    classNames += ' done';
-  }
+    if (completed) {
+      classNames += ' completed';
+    }
+    return classNames;
+  };
 
   return (
-    <span className={classNames}>
+    <span className={getClassNames()}>
       <span
         className="todo-list-item-label"
         onClick={onClick}
