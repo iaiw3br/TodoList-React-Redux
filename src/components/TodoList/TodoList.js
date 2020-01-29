@@ -2,19 +2,24 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Todo from "../Todo";
 
-const TodoList = ({todos, toggleTodo, toggleImportant}) => (
-    <ul>
-        {
-            todos.map(todo =>
+import './TodoList.css';
+
+const TodoList = ({todos, toggleTodo, toggleImportant}) => {
+
+    const elements = todos.map(todo =>{
+        return (
+            <li key={todo.id} className="todo-list-item">
                 <Todo
-                    key={todo.id}
                     {...todo}
                     onClick={() => toggleTodo(todo.id)}
                     onToggleImportant={() => toggleImportant(todo.id)}
-                />)
-        }
-    </ul>
-);
+                />
+            </li>
+        );
+    });
+
+    return (<ul className="todo-list list-group">{ elements }</ul>);
+};
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(
