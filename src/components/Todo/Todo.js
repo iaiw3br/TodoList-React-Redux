@@ -36,20 +36,6 @@ const Todo = ({onClick, completed, text, onToggleImportant, important}) => {
     </span>
     )
 
-    // <div>
-    //     <li className="list-group-item"
-    //         onClick={onClick}
-    //         style={{
-    //             textDecoration: completed ? 'line-through' : 'none',
-    //             color: important ? 'red' : 'none'
-    //         }}
-    //     >
-    //         {text}
-    //     </li>
-    //     <button onClick={onToggleImportant}>important</button>
-    //
-    // </div>
-
 };
 
 Todo.propTypes = {
