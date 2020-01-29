@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Todo.css';
 
 const Todo = ({
-  onClick, completed, text, onToggleImportant, important,
+  onClick, completed, text, onToggleImportant, important, onToggleDelete
 }) => {
   let classNames = 'todo-list-item';
 
@@ -36,6 +36,7 @@ const Todo = ({
       <button
         type="button"
         className="btn btn-outline-danger btn-sm float-right"
+        onClick={onToggleDelete}
       >
         <i className="fa fa-trash-o" />
       </button>

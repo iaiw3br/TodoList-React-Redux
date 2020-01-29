@@ -4,13 +4,16 @@ import Todo from '../Todo';
 
 import './TodoList.css';
 
-const TodoList = ({ todos, toggleTodo, toggleImportant }) => {
+const TodoList = ({
+  todos, toggleTodo, toggleImportant, toggleDelete,
+}) => {
   const elements = todos.map((todo) => (
     <li key={todo.id} className="todo-list-item">
       <Todo
         {...todo}
         onClick={() => toggleTodo(todo.id)}
         onToggleImportant={() => toggleImportant(todo.id)}
+        onToggleDelete={() => toggleDelete(todo.id)}
       />
     </li>
   ));
@@ -28,6 +31,7 @@ TodoList.propTypes = {
   ).isRequired,
   toggleTodo: PropTypes.func.isRequired,
   toggleImportant: PropTypes.func.isRequired,
+  toggleDelete: PropTypes.func.isRequired,
 };
 
 export default TodoList;
